@@ -11,14 +11,27 @@ const reportRoutes = require("./routes/reportRoutes")
 const app = express();
 
 // Middlewares to handle CORS
+const cors = require("cors");
+
+const allowedOrigins = [
+    "https://task-management-d8gs.vercel.app",
+    "http://localhost:3000" // for local development
+];
+
 app.use(
     cors({
-        origin:  "*",
+        origin: function (origin, callback) {
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("Not allowed by CORS"));
+            }
+        },
         methods: ["GET", "POST", "PUT", "DELETE"],
-        allowedHeaders: ["Content-Type", "Authorization"]
+        allowedHeaders: ["Content-Type", "Authorization"],
+        credentials: true
     })
 );
-
 // Connect Database
 connectDB()
 
