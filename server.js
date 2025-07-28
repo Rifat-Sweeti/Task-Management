@@ -11,11 +11,11 @@ const reportRoutes = require("./routes/reportRoutes")
 const app = express();
 
 // Middlewares to handle CORS
-const cors = require("cors");
+
 
 const allowedOrigins = [
     "https://task-management-d8gs.vercel.app",
-    "http://localhost:3000" // for local development
+    "http://localhost:8000" // for local development
 ];
 
 app.use(
