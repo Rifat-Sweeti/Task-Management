@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:8000"
+export const BASE_URL = "https://task-management-production-ac59.up.railway.app"
 
 export const API_PATHS = {
   AUTH: {
