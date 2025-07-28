@@ -1,6 +1,6 @@
 import React from "react";
 import {BrowserRouter as Router, Routes, Route, Outlet, Navigate} from "react-router-dom"
-import SignUp from "./pages/Auth/Signup";
+import SignUp from "./pages/Auth/SignUp";
 import Dashboard from "./pages/Admin/Dashboard";
 import Login from "./pages/Auth/Login";
 import ManageTasks from "./pages/Admin/ManageTasks";
@@ -23,7 +23,7 @@ const App = () => {
           <Routes>
 
             <Route path="/login" element={<Login />} />
-            <Route path="/signUp" element={<SignUp />} />
+            <Route path="/signup" element={<SignUp />} />
 
             {/* Admin Routes */}
             <Route element={<PrivateRoute allowedRoles={["admin"]} />}>
